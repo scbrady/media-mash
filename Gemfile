@@ -15,7 +15,6 @@ gem 'fancybox2-rails'
 
 gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
-gem 'fog', '~> 1.3.1'
 
 # Use sqlite3 as the database for Active Record
 group :test, :development do
