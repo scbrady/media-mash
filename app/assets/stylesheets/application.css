@@ -12,3 +12,9 @@
  *= require fancybox
  *= require_tree .
  */
+table.table td {
+  vertical-align: middle;
+}
+table.table img {
+  height: 50px;
+}

@@ -1,10 +1,11 @@
 <%- model_class = Album -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%=t '.title', :default => "Haircuts" %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -12,6 +13,11 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
+        <td>
+          <% if album.photos.first != nil %>
+            <img src="<%= album.photos.first.image_url(:thumb) %>"/>
+          <% end %>
+        </td>
         <td><%= link_to album.name, user_album_path(@user,album) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

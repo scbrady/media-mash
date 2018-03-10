@@ -26,7 +26,7 @@ class AlbumsController < ApplicationController
         redirect_to [@user, @album], notice: "Album shared to #{user_email}"
       #format.json { render action: 'show', status: :created, location: @album }
       else
-        flash.now[:error] =  'Album failed to create'
+        flash.now[:error] =  'Could not create haircut'
       #format.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
@@ -50,10 +50,10 @@ class AlbumsController < ApplicationController
     @album.users << @user
 
     if @album.save
-      redirect_to [@user, @album], notice: 'Album was successfully created.'
+      redirect_to [@user, @album], notice: 'Haircut was successfully created.'
       #format.json { render action: 'show', status: :created, location: @album }
     else
-      flash.now[:error] =  'Album failed to create'
+      flash.now[:error] =  'Could not create haircut'
       render action: 'new'
       #format.json { render json: @album.errors, status: :unprocessable_entity }
     end
@@ -64,7 +64,7 @@ class AlbumsController < ApplicationController
   def update
     respond_to do |format|
       if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
+        format.html { redirect_to @album, notice: 'Haircut was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -94,6 +94,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:name)
+      params.require(:album).permit(:name, :description)
     end
 end

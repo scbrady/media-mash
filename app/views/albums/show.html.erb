@@ -1,6 +1,7 @@
 <%- model_class = Album -%>
 <div class="page-header">
   <h1><%=t '.title', :default => @album.name %></h1>
+  <p><%= @album.description %></p>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_user_album_path(@user, @album), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -10,11 +11,6 @@
               :class => 'btn btn-danger' %>
   
   <br />
-  <%= form_tag add_album_path(@album), method: 'get' do %>
-    <label for="Add">Share Album(Email)</label>
-    <%= text_field_tag :user_email %>
-    <%= submit_tag "Submit", :class => 'btn' %>
-  <% end %>
 
   <script id="template-upload" type="text/x-tmpl">
   <div class="upload">
