@@ -13,7 +13,7 @@ gem 'simple_form'
 
 gem 'fancybox2-rails'
 
-gem 'rmagick'
+gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
 gem 'fog', '~> 1.3.1'
 
