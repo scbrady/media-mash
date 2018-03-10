@@ -13,7 +13,7 @@ gem 'simple_form'
 
 gem 'fancybox2-rails'
 
-gem 'rmagick', :require => 'RMagick'
+gem 'rmagick', '2.16.0', :require => 'rmagick'
 gem 'carrierwave'
 
 # Use sqlite3 as the database for Active Record
