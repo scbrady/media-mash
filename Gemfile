@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 ruby "2.2.4"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.10'
 
 gem 'devise'
 
 gem "therubyracer"
-gem "less-rails"
+gem "less-rails", '~> 2.7.0'
 gem "twitter-bootstrap-rails"
 
 gem 'simple_form'
@@ -65,6 +65,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'tilt'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
